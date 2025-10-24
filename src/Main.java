@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
     static String primo="";
@@ -9,7 +10,7 @@ public class Main {
         String tmpS;
         int tmp;
         ArrayList<Cavallo> listaCavallo = new ArrayList<Cavallo>();
-        for (int i = 1; i <= 4; i++) {
+        for (int i = 1; i <= 5; i++) {
             System.out.println("Inserisci il nome del cavallo " + i);
             tmpS =  input.nextLine();
             System.out.println("Inserisci la lentezza del cavallo " + i);
@@ -18,9 +19,17 @@ public class Main {
             Cavallo c=new Cavallo(tmpS, tmp);
             listaCavallo.add(c);
         }
+
+        int a = (int)(Math.random() / 0.2);
+        Cavallo x = listaCavallo.get(a);
+        listaCavallo.remove(a);
+        x.interrupt();
+        System.out.println("Cavallo azzoppato: " + x.getNomeCavallo());
+
         for(Cavallo c: listaCavallo){
             c.start();
         }
+
         for(Cavallo c: listaCavallo){
             try {
                 c.join();
