@@ -6,9 +6,9 @@ Ogni cavallo ha una diversa velocità (parametro “lentezza”), e il programma
 Uno dei cavalli viene scelto randomicamente e viene "azzoppato", ovvero, non arrivera' al termine della corsa.
 
 ## Classi principali
-- **GestoreGaraCavalli**  
+- **GaraCavalliAzzoppati_Crisan.GestoreGaraCavalli**  
   Gestisce la gara, chiede i dati all’utente, avvia i thread e mostra il vincitore.
-- **Cavallo (extends Thread)**  
+- **GaraCavalliAzzoppati_Crisan.Cavallo (extends Thread)**  
   Rappresenta un cavallo che avanza passo dopo passo in base alla sua lentezza.
 
 ## Funzionamento
